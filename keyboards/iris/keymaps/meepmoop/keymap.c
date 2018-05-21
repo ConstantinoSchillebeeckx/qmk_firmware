@@ -5,8 +5,6 @@
 extern keymap_config_t keymap_config;
 
 #define _QWERTY 0
-#define _LOWER 1
-#define _RAISE 2
 #define _ADJUST 16
 
 enum custom_keycodes {
@@ -17,7 +15,7 @@ enum custom_keycodes {
 #define KC_ KC_TRNS
 #define _______ KC_TRNS
 
-#define KC_ADJ MO(_ADJUST)  // Toggle layer ADJAD for use in KC_keymaps
+#define KC_ADJ MO(_ADJUST)  // Toggle layer ADJUDST
 #define KC_MS_D KC_MS_DOWN
 #define KC_MS_L KC_MS_LEFT
 #define KC_MS_R KC_MS_RIGHT
@@ -36,17 +34,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
      LCTL, Z  , X  , C  , V  , B  ,    ,     ENT , N  , M  ,COMM,DOT ,SLSH,,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       LALT,LGUI,ADJ,         ENT,SPC,BSPC
+                       LALT,LGUI,SPC,         ENT,ADJ,SPC
   //                  `----+----+----'        `----+----+----'
   ),
 
   [_ADJUST] = KC_KEYMAP(
   //,----+----+----+----+----+----.              ,----+----+----+----+----+----.
-    TILD,    ,ACL0,ACL1,ACL2,    ,                    ,    ,    ,MINUS,EQL,   ,
+    GRV,    ,    ,    ,    ,    ,                    ,    ,    ,MINUS,EQL,   ,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,    ,MS_1,MS_UP,MS_2,    ,                  ,    , UP ,LCBR,RCBR,BSLASH,
+         ,    ,    ,    ,    ,    ,                  ,    , UP ,LBRC,RBRC,BSLASH,
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
-         ,    ,MS_L,MS_D,MS_R,    ,                   ,LEFT,DOWN,RIGHT,    ,   ,
+         ,    ,    ,    ,    ,    ,                   ,LEFT,DOWN,RIGHT,    ,   ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
          ,    ,    ,    ,    ,    ,    ,         ,    ,    ,    ,    ,    ,    ,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
